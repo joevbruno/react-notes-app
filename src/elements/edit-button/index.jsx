@@ -13,7 +13,7 @@ export class EditButton extends React.Component {
     const { buttonClassName, iconClassName, onClick } = this.props;
 
     return (
-      <button className={buttonClassName} onClick={onClick}>
+      <button className={buttonClassName} onClick={onClick} style={{ marginLeft: '16px'}}>
         <Icon className={iconClassName} type="edit" theme="outlined" />
       </button>
     );

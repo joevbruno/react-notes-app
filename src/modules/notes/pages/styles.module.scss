@@ -1,11 +1,10 @@
 .container {
   box-sizing: border-box;
-  background-color: #000;
+  background-color: white;
   margin: 0 10px 20px 10px;
   padding: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border-radius: 4px;
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
@@ -13,21 +12,18 @@
 
 .button-container {
   text-align: right;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
 
 .button {
+  background-color: white;
   border: none;
-  background: transparent;
 }
 
 .title-input {
   margin-bottom: 15px;
   width: 100%;
   border: none;
+  color: #000;
 }
 
 .note-content-container {
@@ -45,7 +41,6 @@
 
 .note-title {
   margin-bottom: 15px;
-  color: #fff;
 }
 
 .textarea {
@@ -53,6 +48,7 @@
   width: 100%;
   font-size: 16px;
   border: none;
+  color: #fff;
 }
 
 .edit-icon {
@@ -67,16 +63,15 @@
 .modal {
   width: 80vw;
   top: -20%;
+  background: #000;
+  min-height: 50vh;
+  border-radius: 4px;
 
-  @media screen and (min-width: 750px) {
-    width: 60vw;
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 40vw;
+  & > div {
+    background: transparent;
   }
 }
 
 .overlay {
-  background-color: rgba(232, 232, 232, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }

@@ -9,8 +9,8 @@ import { TextArea, Input } from 'elements';
 export class Editable extends React.Component {
   state = {
     id: '',
-    title: '',
-    content: '',
+    title: 'Title',
+    content: 'Description',
   };
 
   static propTypes = {
@@ -23,7 +23,7 @@ export class Editable extends React.Component {
   static getDerivedStateFromProps(props, state) {
     const { id, title, content } = props;
 
-    if (state.title || state.content) {
+    if (state.id) {
       return {
         id,
         title,

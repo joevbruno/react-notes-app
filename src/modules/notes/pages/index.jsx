@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 import { Modal, Header } from 'elements';
 import { Notes, Editable } from 'modules/notes';
 import * as actions from '../actions';
-import { getNote } from './helpers'
+import { getNote } from './helpers';
 
 const NEW = 'new';
 
@@ -18,13 +18,13 @@ export class NotesContainer extends React.Component {
     notes: PropTypes.array,
     onSearch: PropTypes.func,
     syncStore: PropTypes.func,
-  }
+  };
 
   onEdit = (noteId = NEW) => {
     this.setState({ noteId });
-  }
+  };
 
-  onSave = (note) => {
+  onSave = note => {
     const { notes, syncStore } = this.props;
     const { id = NEW } = note || {};
 
@@ -34,30 +34,33 @@ export class NotesContainer extends React.Component {
     }
 
     return syncStore(actions.onUpdate(notes, note));
-  }
+  };
 
   onDelete = noteId => {
     const { notes, syncStore } = this.props;
     const next = actions.onDelete(notes, { id: noteId });
 
     syncStore(next);
-  }
+  };
 
   onClose = () => {
-    this.setState({ noteId: null })
-  }
+    this.setState({ noteId: null });
+  };
 
   renderHeader = () => {
     const { query, onSearch } = this.props;
 
-    return <Header search={query} onSearch={onSearch} />;
+    return (
+      <Header search={query} onSearch={onSearch}>
+        {this.renderNew()}
+      </Header>
+    );
   };
 
   renderModal = () => {
     const { noteId } = this.state;
     const { notes } = this.props;
-    const { id, title, content } = getNote(notes, noteId)
-
+    const { id, title, content } = getNote(notes, noteId);
 
     return (
       <Modal
@@ -65,7 +68,12 @@ export class NotesContainer extends React.Component {
         onClose={this.onClose}
         classNames={{ modal: styles.modal, overlay: styles.overlay }}
       >
-        <Editable id={id} title={title} content={content} onSave={this.onSave} />
+        <Editable
+          id={id}
+          title={title}
+          content={content}
+          onSave={this.onSave}
+        />
       </Modal>
     );
   };
@@ -79,14 +87,13 @@ export class NotesContainer extends React.Component {
   };
 
   renderNew() {
-    return <button onClick={this.onEdit.bind(this, 'new')}>NEW</button>
+    return <button className={'new-note'} onClick={this.onEdit.bind(this, 'new')}>NEW</button>;
   }
 
   render() {
     return (
       <div className="App">
         {this.renderHeader()}
-        {this.renderNew()}
         {this.renderNotes()}
         {this.renderModal()}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { message } from 'antd';
+import { message } from "antd";
 import styles from './styles.module.scss';
 
 import {
@@ -11,7 +11,6 @@ import {
 } from 'elements';
 
 export class Note extends React.Component {
-
   static propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
@@ -29,7 +28,7 @@ export class Note extends React.Component {
   onDelete = () => {
     const { onDelete } = this.props;
 
-    message.success('Note deleted', 1.5);
+    message.success("Note deleted", 1.5);
     onDelete();
   };
 

@@ -9,7 +9,7 @@ export class Header extends React.Component {
   };
 
   render() {
-    const { search, onSearch } = this.props;
+    const { search, children, onSearch } = this.props;
 
     return (
       <header className={styles.header}>
@@ -21,6 +21,7 @@ export class Header extends React.Component {
           value={search}
           onChange={onSearch}
         />
+        {children}
       </header>
     );
   }

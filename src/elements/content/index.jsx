@@ -19,7 +19,7 @@ export class Content extends React.Component {
 
     return (
       <div className={containerClassName} onClick={onClick}>
-        <p className={contentClassName}>{content}</p>
+        <p className={contentClassName} style={{ color: "#666"}}>{content}</p>
       </div>
     );
   }
