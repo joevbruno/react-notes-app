@@ -1,0 +1,35 @@
+{
+  "name": "notes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.10.1",
+    "babel-plugin-import": "^1.9.1",
+    "fuse.js": "^3.2.1",
+    "node-sass": "^4.9.4",
+    "react": "^16.5.2",
+    "react-app-rewired": "^1.6.2",
+    "react-autosize-textarea": "^5.0.0",
+    "react-dom": "^16.5.2",
+    "react-masonry-css": "^1.0.11",
+    "react-responsive-modal": "^3.4.0",
+    "react-scripts": "2.0.4",
+    "recompose": "^0.30.0",
+    "short-uuid": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
