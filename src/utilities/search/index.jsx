@@ -7,7 +7,7 @@ export class Search extends React.Component {
     query: '',
   };
 
-  static defaultProps = {
+  static propTypes = {
     data: PropTypes.array,
     searchOptions: PropTypes.any,
   }

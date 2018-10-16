@@ -14,6 +14,6 @@ const defaultOptions = {
 export function getSearchableEntities(notes, options = defaultOptions) {
   // Create a new Fuse object (search filter) with the corresponding options, then return
   // the Fuse object to be used in searching.
-
+  
   return new Fuse(notes || [], options);
 }
